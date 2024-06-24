@@ -29,7 +29,7 @@ const WFBuilderNavbar: React.FC<NavbarProps> = ({ menus, active }) => {
 	const [setShowToast] = saveBtn.toast;
 
 	const onClick = (file: string) => {
-		Papa.parse(`/src/csv/${file}?raw`, {
+		Papa.parse(`/src/csv/${file}?url&raw`, {
 			download: true,
 			header: true,
 			complete: (results) => {
