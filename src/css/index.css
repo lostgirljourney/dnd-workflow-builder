@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+	overflow-y: scroll;
+}
+
+html,
+body,
+#root {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background-color: white;
+}
+
+@layer base {
+	.btn-bg-neutral {
+		@apply btn btn-neutral bg-black w-fit text-white rm-outline;
+	}
+}
+
+@layer components {
+	.rm-outline {
+		@apply focus-within:outline-none focus-visible:outline-none focus:outline-none  outline-none;
+	}
+}
+
+.collapse-arrow > .collapse-title:after {
+	top: 1.5rem;
+}
