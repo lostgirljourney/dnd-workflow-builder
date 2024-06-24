@@ -8,14 +8,14 @@ import WorkflowBuilderContext from '../../../pages/contexts/WorkflowBuilderConte
 import { Link } from 'react-router-dom';
 import Papa from 'papaparse';
 
-const modules = import.meta.glob('/src/csv/*.csv', {
+const modules = import.meta.glob('/public/csv/*.csv', {
 	eager: true,
 	import: 'default',
 	query: '?raw'
 });
 
 const fileNames = Object.keys(modules).map((path) =>
-	path.replace('/src/csv/', '')
+	path.replace('/public/csv/', '')
 );
 
 const WFBuilderNavbar: React.FC<NavbarProps> = ({ menus, active }) => {
@@ -29,7 +29,7 @@ const WFBuilderNavbar: React.FC<NavbarProps> = ({ menus, active }) => {
 	const [setShowToast] = saveBtn.toast;
 
 	const onClick = (file: string) => {
-		Papa.parse(`/src/csv/${file}?url&raw`, {
+		Papa.parse(`/csv/${file}?url&raw`, {
 			download: true,
 			header: true,
 			complete: (results) => {
