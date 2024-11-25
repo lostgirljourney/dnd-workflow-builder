@@ -64,7 +64,7 @@ const WorkflowListview = () => {
 								<th
 									key={tableHead + i}
 									className={clsx(
-										i === tableHeads.length - 1 ? 'flex justify-center' : ''
+										i === tableHeads.length - 1 ? 'flex justify-end mr-2' : ''
 									)}
 								>
 									{tableHead}

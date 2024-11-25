@@ -53,24 +53,26 @@ const DisplayOP = () => {
 								</li>
 							</ul>
 						</details>
-						<table className="table table-xs table-pin-rows">
-							<thead>
-								<tr>
-									{header.map((k) => (
-										<th key={k}>{k}</th>
-									))}
-								</tr>
-							</thead>
-							<tbody>
-								{op.map((output, i) => (
-									<tr key={`o/p-${i}`}>
+						<div className="h-80 overflow-y-auto">
+							<table className="table table-xs table-pin-rows">
+								<thead>
+									<tr>
 										{header.map((k) => (
-											<td key={k}>{output[k]}</td>
+											<th key={k}>{k}</th>
 										))}
 									</tr>
-								))}
-							</tbody>
-						</table>
+								</thead>
+								<tbody>
+									{op.map((output, i) => (
+										<tr key={`o/p-${i}`}>
+											{header.map((k) => (
+												<td key={k}>{output[k]}</td>
+											))}
+										</tr>
+									))}
+								</tbody>
+							</table>
+						</div>
 					</>
 				) : (
 					<div role="alert" className="alert mt-4">
